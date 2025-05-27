@@ -10,20 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-/**
- * Контроллер обработки задач
- */
 @Controller
 @AllArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
 
-    /**
-     * Получение страницы по адресу:
-     * http://localhost:8080/products
-     * с пустой формой для заполнения
-     * */
+
     @GetMapping("/products")
     public String viewProducts (Model model) {
         List<Product> products = productService.findAll();
@@ -31,11 +24,6 @@ public class ProductController {
         return "products";
     }
 
-    /**
-     * Отправка данных из формы по адресу:
-     * http://localhost:8080/products и вывод их на странице
-     * @return Возвращает страницу с результатов ввода пользователя
-     */
     @PostMapping("/products")
     public String addProduct(Product prod, Model model) {
         productService.addProduct(prod);

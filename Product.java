@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class Product {
-    private int id; // идентификатор
-    private String phoneModel; // модель телефона
-    private String manufacturer; // производитель
-    private double price; // стоимость
+    private int id; 
+    private String phoneModel;
+    private String manufacturer; 
+    private double price;
 
 }
